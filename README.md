@@ -46,7 +46,7 @@ result = test.run_ci_test(0, 1, [], return_full=True)  # example call shape;
                                                           # real signature
 ```
 
-Run the full benchmark used in the original notebook's `__main__` block:
+Run the full benchmark:
 
 ```bash
 mixci-benchmark
