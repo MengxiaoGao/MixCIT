@@ -1,9 +1,5 @@
 from mixci._compat import *  # noqa: F401,F403
 
-# %% CELL 9: run_ci_test entry point + attach
-# =============================================================================
-# ============================================================================
-
 def run_ci_test(self, x_idx, y_idx, z_indices, return_full=False,
                  use_permutation_fallback=False,
                  n_permutations=200,
