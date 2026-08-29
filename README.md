@@ -68,7 +68,3 @@ df = run_benchmark(
 
 - Numba is optional. Without it, `_compat.py` falls back to no-op
   `njit`/`prange` shims (pure-Python, slower).
-- This refactor did not change any algorithmic code — it only moved
-  cell bodies into modules and centralized the monkey-patch calls in
-  `_patch.py`. If you find a bug, it very likely also exists in the
-  original notebook.
