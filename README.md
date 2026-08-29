@@ -1,4 +1,4 @@
-# mixci
+# MixCIT
 
 Debiased conditional-independence testing for mixed continuous/discrete
 data.
@@ -22,10 +22,6 @@ src/mixci/
     cli.py                     # `mixci-benchmark` console entry point
     _patch.py                   # wires the above methods onto MixCIDebiased
 ```
-
-`_patch.py` reproduces, once and deterministically, the monkey-patching
-the original notebook did across cells (`MixCIDebiased._x = _x`, ...).
-Behavior is unchanged from the notebook — only the file organization.
 
 ## Install
 
