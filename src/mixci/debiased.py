@@ -2,31 +2,6 @@ from mixci._compat import *  # noqa: F401,F403
 from mixci.monomials import _build_monomials, _Np_count, _solve_lp_intercept_weights, _compute_intercepts_per_anchor  # noqa: F401
 from mixci.variance import _compute_overlap_variance, _compute_overlap_variance_flat  # noqa: F401
 
-# %% CELL 6: Debiased test with Regime IV specialization (PATCHED)
-# =============================================================================
-# ============================================================================
-# CELL 6: Debiased test with Regime IV specialization  (REPLACES ORIGINAL)
-# ============================================================================
-# This cell replaces the original _debiased_test with a dispatcher that
-# routes Regime IV (X continuous, Z discrete) to a specialized branch.
-#
-# Bug fixed:
-#   * In CCD (Z discrete, X continuous), the original code fell into a
-#     branch where the coarse neighborhood contained every observation
-#     in the same Z-stratum (~n/L neighbors instead of k_n). This caused:
-#       (a) runtime blowup vs CCC, and
-#       (b) inflated Type I error because the variance estimator was
-#           calibrated for k_n-sized neighborhoods.
-#
-# Fix summary:
-#   * Regime IV branch computes a_C[i] as the leave-one-out within-stratum
-#     mean of K(Y_i, Y_j) in O(n) per stratum.
-#   * Residuals xi_i are centered within-stratum to match the paper's
-#     Appendix IV construction.
-#   * Candidate pairs for the variance estimator come only from the fine
-#     graph. Coarse overlap uses stratum membership (rho_C = 0).
-#
-
 
 def _debiased_test(self, X, Y, Z, x_disc, y_disc, c_const=2.0,
                    return_diagnostics=False):
