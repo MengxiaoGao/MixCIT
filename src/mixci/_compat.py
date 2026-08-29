@@ -1,19 +1,6 @@
 # ============================================================================
 # CELL 1: Imports and dependencies
 # ============================================================================
-"""
-MixCI validation notebook (cleaned).
-
-The debiased conditional independence test with a Regime IV
-specialization for X continuous, Z discrete (the CCD generator).
-
-Cells 1-8 define the test method and its baselines.
-Cells 9-11 define the data generator, benchmark harness, and entry point.
-
-Paste each cell into a separate Colab / Jupyter cell in order. Cells are
-independent enough that you can re-run any subset without earlier cells,
-except that the class MixCIDebiased must exist before any patch cell.
-"""
 
 import os
 import sys
