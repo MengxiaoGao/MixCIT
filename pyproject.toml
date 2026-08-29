@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mixci"
+version = "0.1.0"
+description = "Debiased conditional independence testing for mixed continuous/discrete data (MixCI)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "joblib",
+]
+
+[project.optional-dependencies]
+numba = ["numba"]
+dev = ["pytest"]
+
+[project.scripts]
+mixci-benchmark = "mixci.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
