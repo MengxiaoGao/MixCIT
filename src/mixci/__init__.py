@@ -6,9 +6,6 @@ Debiased conditional-independence testing (MixCI) for mixed
 continuous/discrete data, with a Regime-IV specialization
 (X continuous, Z discrete), baselines, synthetic data generators,
 and a benchmarking harness.
-
-This package is a straight refactor of a research notebook into
-importable modules; behavior is unchanged, only the organization is.
 """
 
 from mixci.core import MixCIDebiased  # noqa: F401
