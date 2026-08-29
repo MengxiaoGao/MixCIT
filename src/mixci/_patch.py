@@ -1,11 +1,3 @@
-"""
-Wires the methods defined across mixci's submodules onto the
-MixCIDebiased class. The original notebook built the class this way
-via sequential monkey-patching across cells; this module reproduces
-that assembly once, at package-import time, in a fixed, deterministic
-order.
-"""
-
 from mixci.core import MixCIDebiased
 
 from mixci.neighborhood import _build_neighborhood, _gather_kernel
